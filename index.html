@@ -1,0 +1,12 @@
+<script type="text/javascript" src="discord.11.5.0.min.js"></script>
+<script type="text/javascript">
+  const client = new Discord.Client();
+
+  client.on('message', msg => {
+    const guildTag = msg.channel.type === 'text' ? `[${msg.guild.name}]` : '[DM]';
+    const channelTag = msg.channel.type === 'text' ? `[#${msg.channel.name}]` : '';
+    console.log(`${guildTag}${channelTag} ${msg.author.tag}: ${msg.content}`);
+  });
+
+  client.login('NjA4NzY1NjQ1MzkxMTM0NzUz.XghVAA.XOoYrlMG6I7N62_9E8xvPOuo2Tc'); <!plz dont steal my token>
+</script>
