@@ -2,11 +2,15 @@
 <script type="text/javascript">
   const client = new Discord.Client();
 
-  client.on('message', msg => {
-    const guildTag = msg.channel.type === 'text' ? `[${msg.guild.name}]` : '[DM]';
-    const channelTag = msg.channel.type === 'text' ? `[#${msg.channel.name}]` : '';
-    console.log(`${guildTag}${channelTag} ${msg.author.tag}: ${msg.content}`);
-  });
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
+});
+
+client.on('message', msg => {
+  if (msg.content === 'ping') {
+    msg.reply('Pong!');
+  }
+});
 
  var token = atob('TmpBNE56WTFOalExTXpreE1UTTBOelV6LlhnalgzQS5oZGpPbE1SaEoyd1h0MlBsc1FmRTRWSWFUd3M=');
   client.login(token); <!-- plz dont steal my token -- >
